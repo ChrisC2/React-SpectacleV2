@@ -1,0 +1,55 @@
+.nav-bar {
+  top: 0px;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  position: fixed;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  padding: 0px;
+  font-family:'Lobster', sans-serif !important;
+}
+
+.search {
+  width: 300px;
+  margin-top: 90px;
+  margin-bottom: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control {
+  border-top-left-radius: 50px !important;
+  border-bottom-left-radius: 50px !important;
+}
+
+.search-btn {
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
+}
+
+.divide {
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn-location {
+  margin-top: 0px !important;
+  margin-bottom: 5px !important;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px !important;
+  width: 200px !important;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%) !important;
+
+}
+
+#map {
+  height: 300px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
