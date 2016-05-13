@@ -8,9 +8,9 @@ export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      address: '',
+      address: 'Santa Monica, CA, USA',
       currentLat: 34.0195,
-      currentLng: 118.4912
+      currentLng: -118.4912
     }
   }
 
@@ -20,6 +20,11 @@ export default class Main extends React.Component {
       callback: (results, status) => {
         if (status !== 'OK') return;
         console.log("this is results", results[0]);
+        this.setState({
+          address: results[0].formatted_address,
+          currentLat: results[0].geometry.location.lat(),
+          currentLng: results[0].geometry.location.lng()
+        })
       }
     });
   };
@@ -40,6 +45,8 @@ export default class Main extends React.Component {
         alert("Your browser does not support geolocation");
       },
       always:() => {
+        let locationParams = this.state.currentLat + "," + this.state.currentLng
+        this.searchAddress(locationParams);
         //add spinner
         return
       }
@@ -51,7 +58,7 @@ export default class Main extends React.Component {
       <div>
         <Navbar/>
         <SearchLocation onSearch={this.searchAddress} onGetLocation={this.getCurrentLocation}/>
-        <GoogleMap lat={this.state.currentLat} lng={this.state.currentLng}/>
+        <GoogleMap lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address} />
         <PhotoContainer/>
       </div>
     )

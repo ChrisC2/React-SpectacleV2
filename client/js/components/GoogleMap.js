@@ -1,20 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CurrentLocation from "./CurrentLocation"
 
 export default class GoogleMap extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log('this is props', this.props)
-  }
 
   componentDidMount() {
     this.componentDidUpdate();
   }
+
+  shouldComponentUpdate(nextProps){
+    console.log('inside')
+    return this.props !== nextProps;
+  }
+
   componentDidUpdate = () => {
-    console.log('updated')
-    console.log('this is props updated', this.props)
-    var map = new GMaps({
+    let map = new GMaps({
 			el: '#map',
+      zoom: 11,
 			lat: this.props.lat,
 			lng: this.props.lng
 		});
@@ -27,13 +29,11 @@ export default class GoogleMap extends React.Component {
 
   render() {
     return(
-      <div id="map"></div>
+      <div className="map-container">
+        <div id="map"></div>
+        <CurrentLocation location={this.props.address}/>
+      </div>
+
     )
   }
-}
-
-GoogleMap.defaultProps = {
-  initialZoom: 6,
-  lat: 53.5333,
-  lng: -113.4073126
 }
