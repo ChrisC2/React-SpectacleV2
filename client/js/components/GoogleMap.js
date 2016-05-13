@@ -9,7 +9,6 @@ export default class GoogleMap extends React.Component {
   }
 
   shouldComponentUpdate(nextProps){
-    console.log('inside')
     return this.props !== nextProps;
   }
 
@@ -23,7 +22,13 @@ export default class GoogleMap extends React.Component {
 
 		map.addMarker({
 			lat: this.props.lat,
-			lng: this.props.lng
+			lng: this.props.lng,
+      draggable: true,
+      dragend: (e) => {
+        let lat = e.latLng.lat();
+        let lng = e.latLng.lng()
+        this.props.setLocation(lat,lng);
+      }
 		});
   }
 

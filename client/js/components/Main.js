@@ -19,7 +19,7 @@ export default class Main extends React.Component {
       address: address,
       callback: (results, status) => {
         if (status !== 'OK') return;
-        
+
         this.setState({
           address: results[0].formatted_address,
           currentLat: results[0].geometry.location.lat(),
@@ -52,12 +52,21 @@ export default class Main extends React.Component {
     });
   };
 
+  setLocation = (lat, lng) => {
+    this.setState({
+      currentLat: lat,
+      currentLng: lng
+    })
+    let locationParams = lat + "," + lng;
+    this.searchAddress(locationParams);
+  }
+
   render() {
     return(
       <div>
         <Navbar/>
         <SearchLocation onSearch={this.searchAddress} onGetLocation={this.getCurrentLocation}/>
-        <GoogleMap lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address} />
+        <GoogleMap lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address} setLocation={this.setLocation} />
         <PhotoContainer lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address}/>
       </div>
     )
