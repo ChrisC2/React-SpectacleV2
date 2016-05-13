@@ -19,7 +19,7 @@ export default class Main extends React.Component {
       address: address,
       callback: (results, status) => {
         if (status !== 'OK') return;
-        console.log("this is results", results[0]);
+        
         this.setState({
           address: results[0].formatted_address,
           currentLat: results[0].geometry.location.lat(),
@@ -32,7 +32,6 @@ export default class Main extends React.Component {
   getCurrentLocation = () => {
     GMaps.geolocate({
       success:(position) => {
-        console.log('this is position', position)
         this.setState({
           currentLat: position.coords.latitude,
           currentLng: position.coords.longitude
@@ -59,7 +58,7 @@ export default class Main extends React.Component {
         <Navbar/>
         <SearchLocation onSearch={this.searchAddress} onGetLocation={this.getCurrentLocation}/>
         <GoogleMap lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address} />
-        <PhotoContainer/>
+        <PhotoContainer lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address}/>
       </div>
     )
   }

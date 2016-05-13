@@ -1,5 +1,4 @@
 module.exports = {
-  key: 	'd904cd4e1fc446759fca25560a753e9f',
-  secret: 	'e6c2e4d27eff4044a9e9e24691862fa5',
+  key: 	'22125417.d904cd4.44abd06ef59d43e5b0fc7e9b4f347ebb',
   maps: 'AIzaSyCnhUkYrZbpj_uTzW62VrIuBQTfVKC5GjA'
 }
