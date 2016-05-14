@@ -24,8 +24,6 @@ export default class Main extends React.Component {
       address: address,
       callback: (results, status) => {
         if (status !== 'OK') return;
-        console.log('THESE ARE RESULTS', results)
-
         this.setState({
           address: results[0].formatted_address,
           currentLat: results[0].geometry.location.lat(),
@@ -68,7 +66,6 @@ export default class Main extends React.Component {
   }
 
   openModal = (obj) => {
-    console.log('this si obj', obj)
     this.setState({
       modalOpen: true,
       modalPhoto: obj
@@ -76,7 +73,6 @@ export default class Main extends React.Component {
   }
 
   closeModal = (e) => {
-    console.log('this is e', e)
     this.setState({
       modalOpen: false,
       modalPhoto: null
