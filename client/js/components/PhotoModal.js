@@ -13,7 +13,7 @@ export default class PhotoModal extends React.Component {
   render() {
     let modalClass = classNames("modal-container",{"visible": this.props.modalOpen});
     let text = this.props.photoObj && this.props.photoObj.caption ?
-      <div className="text-container">{this.props.photoObj.caption.text}{this.props.photoObj.caption.text}{this.props.photoObj.caption.text}{this.props.photoObj.caption.text}{this.props.photoObj.caption.text}</div>
+      <div className="text-container">{this.props.photoObj.caption.text}</div>
       :
       "";
 
