@@ -85,11 +85,6 @@ export default class Main extends React.Component {
       <div>
         <Navbar/>
 
-        <SearchLocation
-          onSearch={this.searchAddress}
-          onGetLocation={this.getCurrentLocation}
-        />
-
         <GoogleMap
           lat={this.state.currentLat}
           lng={this.state.currentLng}
@@ -108,6 +103,11 @@ export default class Main extends React.Component {
           modalOpen={this.state.modalOpen}
           photoObj={this.state.modalPhoto}
           closeModal={this.closeModal}
+        />
+
+        <SearchLocation
+          onSearch={this.searchAddress}
+          onGetLocation={this.getCurrentLocation}
         />
       </div>
     )
