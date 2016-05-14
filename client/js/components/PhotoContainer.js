@@ -10,7 +10,6 @@ export default class PhotoContainer extends React.Component {
   }
 
   componentDidMount = () => {
-    console.log('photocontainer mounted')
     let lat = this.props.lat;
     let lng = this.props.lng
     this.getPhotos(lat, lng);
@@ -18,7 +17,6 @@ export default class PhotoContainer extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if(this.props.lat !== nextProps.lat && this.props.lng !== nextProps.lng) {
-      console.log('changed')
       let lat = nextProps.lat;
       let lng = nextProps.lng
       this.getPhotos(lat,lng)
