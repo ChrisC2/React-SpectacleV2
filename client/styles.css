@@ -181,6 +181,10 @@ h1 {
 
 @media (max-width: 580px){
 
+  .nav-bar {
+    position: absolute;
+  }
+
   h1 {
     font-size: 24px !important;
     padding: 0px;
