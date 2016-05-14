@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var https = require('https');
-var tokenKey = require('./TokenKeys');
+// var tokenKey = require('./TokenKeys');
 var morgan = require('morgan');
 var request = require('request');
 var bodyParser = require('body-parser');
@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/../client'));
 app.get('/igcall', function (req, res) {
   var lat = req.query.lat;
   var lng = req.query.lng;
-  request("https://api.instagram.com/v1/media/search?lat=" + lat + "&lng="+ lng + "&distance=5000&access_token=" + tokenKey.key, function (error, response, body) {
+  request("https://api.instagram.com/v1/media/search?lat=" + lat + "&lng="+ lng + "&distance=5000&access_token=" + '22125417.d904cd4.44abd06ef59d43e5b0fc7e9b4f347ebb', function (error, response, body) {
     if(error){
         return console.log('Error:', error);
     }
