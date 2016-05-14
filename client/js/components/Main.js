@@ -3,6 +3,9 @@ import Navbar from "./NavBar";
 import SearchLocation from "./SearchLocation";
 import GoogleMap from "./GoogleMap";
 import PhotoContainer from "./PhotoContainer";
+import PhotoModal from "./PhotoModal";
+
+import classNames from "classnames";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -10,7 +13,9 @@ export default class Main extends React.Component {
     this.state = {
       address: 'Santa Monica, CA, USA',
       currentLat: 34.0195,
-      currentLng: -118.4912
+      currentLng: -118.4912,
+      modalOpen: false,
+      modalPhoto: null
     }
   }
 
@@ -61,13 +66,51 @@ export default class Main extends React.Component {
     this.searchAddress(locationParams);
   }
 
+  openModal = (obj) => {
+    console.log('this si obj', obj)
+    this.setState({
+      modalOpen: true,
+      modalPhoto: obj
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      modalOpen: false,
+      modalPhoto: null
+    })
+  }
+
   render() {
+
     return(
       <div>
         <Navbar/>
-        <SearchLocation onSearch={this.searchAddress} onGetLocation={this.getCurrentLocation}/>
-        <GoogleMap lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address} setLocation={this.setLocation} />
-        <PhotoContainer lat={this.state.currentLat} lng={this.state.currentLng} address={this.state.address}/>
+
+        <SearchLocation
+          onSearch={this.searchAddress}
+          onGetLocation={this.getCurrentLocation}
+        />
+
+        <GoogleMap
+          lat={this.state.currentLat}
+          lng={this.state.currentLng}
+          address={this.state.address}
+          setLocation={this.setLocation}
+        />
+
+        <PhotoContainer
+          lat={this.state.currentLat}
+          lng={this.state.currentLng}
+          address={this.state.address}
+          selectPhoto={this.openModal}
+        />
+
+        <PhotoModal
+          modalOpen={this.state.modalOpen}
+          photoObj={this.state.modalPhoto}
+          closeModal={this.closeModal}
+        />
       </div>
     )
   }

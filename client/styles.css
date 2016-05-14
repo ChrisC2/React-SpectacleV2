@@ -2,17 +2,13 @@ body {
   background-color:aliceblue !important;
 }
 
-
-
 .nav-bar {
   top: 0px;
   width: 100%;
   height: auto;
-  /*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
-  background: #5C258D; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #5C258D , #4389A2); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #5C258D , #4389A2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #5C258D;
+  background: -webkit-linear-gradient(to left, #5C258D , #4389A2);
+  background: linear-gradient(to left, #5C258D , #4389A2);
   position: fixed;
   z-index: 10;
   text-align: center;
@@ -100,12 +96,81 @@ h1 {
 
 .photo-container {
   text-align: center;
-  display: inline-block;
-  margin: 10px auto;
-  width: 90%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  -webkit-box-shadow: 7px 6px 5px -1px rgba(189,181,191,0.83);
+  -moz-box-shadow: 7px 6px 5px -1px rgba(189,181,191,0.83);
+  box-shadow: 1px 6px 5px -1px rgba(189,181,191,0.83);
 }
 
 img {
   height: 250px;
   width: 250px;
+  cursor: pointer;
+}
+
+img:hover {
+  border-style: solid;
+  border-color: #FFD700;
+  border-width: 1px;
+
+}
+
+.modal-container {
+  position: fixed;
+  z-index: 10;
+  color: white;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -70%);
+  width: 90%;
+  background-color: white;
+  bottom: 0;
+  height: 0px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.modal-img {
+  width: 50%;
+  height: 100%;
+}
+
+.modal-container.visible {
+  height: 70%;
+}
+
+@media (max-width: 580px){
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  #map {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  .map-container {
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  .loc-container {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .modal-container {
+    width: 100%
+  }
+
+  .modal-img {
+    width: 100%;
+    height: 60%;
+  }
 }

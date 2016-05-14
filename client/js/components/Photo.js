@@ -6,7 +6,9 @@ export default class Photo extends React.Component {
   }
   render() {
     return(
-      <img src={this.props.src}/>
+      <img src={this.props.src}
+        onClick={this.props.selectPhoto}
+      />
     )
   }
 }
