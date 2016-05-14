@@ -24,6 +24,7 @@ export default class Main extends React.Component {
       address: address,
       callback: (results, status) => {
         if (status !== 'OK') return;
+        console.log('THESE ARE RESULTS', results)
 
         this.setState({
           address: results[0].formatted_address,
@@ -74,7 +75,8 @@ export default class Main extends React.Component {
     })
   }
 
-  closeModal = () => {
+  closeModal = (e) => {
+    console.log('this is e', e)
     this.setState({
       modalOpen: false,
       modalPhoto: null

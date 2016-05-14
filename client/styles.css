@@ -32,13 +32,13 @@ h1 {
 }
 
 .form-control {
-  /*border-top-left-radius: 50px !important;
-  border-bottom-left-radius: 50px !important;*/
+  border-top-left-radius: 50px !important;
+  border-bottom-left-radius: 50px !important;
 }
 
 .search-btn {
-  /*border-top-right-radius: 50px !important;
-  border-bottom-right-radius: 50px !important;*/
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
 }
 
 .divide {
@@ -125,6 +125,8 @@ h1 {
   left: 50%;
   top: 70%;
   transform: translate(-50%, -70%);
+  -webkit-transform: translate(-50%, -70%);
+  -moz-transform: translate(-50%, -70%);
   width: 90%;
   background-color: white;
   bottom: 0;

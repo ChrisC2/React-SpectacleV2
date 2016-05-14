@@ -25,14 +25,14 @@ export default class SearchLocation extends React.Component {
   render() {
     return(
       <div className="search-container">
-        <div className="search input-group">
+        <form className="search input-group" onSubmit={this.searchOnClick}>
           <input type="search" className="form-control" placeholder="Search by Location..." onChange={this.handleChange}/>
             <span className="input-group-btn">
-              <button className="btn btn-info search-btn" type="button" onClick={this.searchOnClick}>
+              <button className="btn btn-info search-btn" type="submit">
                 <i className="glyphicon glyphicon-search"></i>
               </button>
             </span>
-        </div>
+        </form>
       <div className="divide">-OR-</div>
       <button className="btn btn-block btn-location" onClick={this.getCurrentLocation}>Use Current Location</button>
       </div>
