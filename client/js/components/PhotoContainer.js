@@ -1,5 +1,6 @@
 import React from "react";
-import Photo from "./Photo"
+import Photo from "./Photo";
+import 'whatwg-fetch';
 
 export default class PhotoContainer extends React.Component {
   constructor(props) {
