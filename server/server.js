@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var https = require('https');
-var tokenKey = require('./tokenKeys');
+var tokenKey = require('./TokenKeys');
 var morgan = require('morgan');
 var request = require('request');
 var bodyParser = require('body-parser');
@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../client'));  
+app.use(express.static(__dirname + '/../client'));
 
 app.get('/igcall', function (req, res) {
   var lat = req.query.lat;
