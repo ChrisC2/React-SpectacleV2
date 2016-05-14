@@ -2,9 +2,9 @@
   "name": "react-spectacle",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "client/bundle.js",
   "scripts": {
-    "start": "npm start",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chris Castillo",
