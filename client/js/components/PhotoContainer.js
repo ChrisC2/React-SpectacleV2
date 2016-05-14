@@ -26,7 +26,6 @@ export default class PhotoContainer extends React.Component {
   }
 
   getPhotos = (lat, lng) => {
-    console.log('called')
     fetch('/igcall?lat=' + lat + '&lng=' + lng)
       .then((response) => {
         return response.json()
