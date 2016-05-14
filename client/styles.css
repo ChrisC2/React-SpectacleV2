@@ -145,6 +145,8 @@ h1 {
   height: 0px;
   -webkit-transition: all .5s;
   transition: all .5s;
+  transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+  -webkit-transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
   -webkit-box-shadow: 7px 6px 5px -1px rgba(189,181,191,0.83);
   -moz-box-shadow: 7px 6px 5px -1px rgba(189,181,191,0.83);
   box-shadow: 1px 6px 5px -1px rgba(189,181,191,0.83);
