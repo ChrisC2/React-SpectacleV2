@@ -5,7 +5,7 @@ export default class SearchLocation extends React.Component {
     super(props);
     this.state = {
       value:  ''
-    }
+    };
   }
 
   handleChange = (event) => {
@@ -15,6 +15,9 @@ export default class SearchLocation extends React.Component {
   searchOnClick = (event) => {
     event.preventDefault();
     this.props.onSearch(this.state.value);
+    this.setState({
+      value: ''
+    });
   }
 
   getCurrentLocation = (event) => {
